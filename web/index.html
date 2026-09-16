@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>规则引擎管理系统</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>规则引擎管理系统</h1>
+
+    <section class="stats">
+      <h2>概览看板</h2>
+      <div id="stats" class="stats-grid"></div>
+    </section>
+
+    <section class="list">
+      <h2>规则集列表</h2>
+      <table id="list">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>名称</th>
+            <th>状态</th>
+            <th>版本</th>
+            <th>创建时间</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </section>
+
+    <section class="eval">
+      <h2>试运行规则</h2>
+      <form id="eval-form">
+        <label>
+          规则集 ID
+          <input type="text" id="eval-rule-set-id" placeholder="输入规则集 ID" required>
+        </label>
+        <label>
+          输入 JSON
+          <textarea id="eval-input" rows="6" placeholder='{"age": 25, "city": "Beijing"}' required></textarea>
+        </label>
+        <button type="submit">运行评估</button>
+      </form>
+      <pre id="eval-result"></pre>
+    </section>
+  </div>
+  <script src="/app.js"></script>
+</body>
+</html>
